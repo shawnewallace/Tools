@@ -26,7 +26,7 @@ def archive_files(path, filesOlderThan)
 				puts "I WILL ARCHIVE" if fileDate <= filesOlderThan
 				puts "I WILL NOT ARCHIVE" if fileDate > filesOlderThan
 
-				FileUtils.mv path + "\\" + fname, path + "\\Archive" if fileDate <= filesOlderThan
+				FileUtils.mv File.join(path, fname), File.join(path, "Archive") if fileDate <= filesOlderThan
 	end					
 end
 
@@ -35,7 +35,7 @@ def generate_new_log_files(path, numFilesToGenerate)
 
 	numFilesToGenerate.times do
 				today = next_weekday(today)
-				fileName = path + "\\" + today.strftime("%Y%m%d Workday - %a.txt")
+				fileName = File.join(path, today.strftime("%Y%m%d Workday - %a.txt"))
 				doc = " "
 				File.open(fileName, 'w') {|f| f.write(doc)} if not File.exists?(fileName)
 	end

@@ -1,5 +1,5 @@
-@projectRootPath = "PROJECT_ROOT_PATH"
-@wiringContainerRootPath = "WIRING_CONTAINER_PATH"
+@projectRootPath = ARGV[0]
+@wiringContainerRootPath = ARGV[1] || ARGV[0]
 
 def GetInterfacesInFile(file)
 	interfaces = Array.new

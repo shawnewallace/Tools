@@ -96,5 +96,9 @@ ruby CreateWorklogFiles.rb <path> <num_files>
 ### `FindFiles.rb`
 Scans a C# project's IoC wiring container and reports which interfaces are registered, outputting `file,interface` pairs.
 
+```bash
+ruby FindFiles.rb <project_root> [wiring_container_root]
+```
+
 ### `recursion.rb`
 Simple recursive power function example (`x^y`).
